@@ -1,0 +1,36 @@
+[
+
+    {
+        "transactionId": 1,
+        "payer": "Johm",
+        "payee": "Akky",
+        "category": "Movie",
+        "subCategory": "subcategory",
+        "amount": 2080,
+        "date": "1-1-2015",
+        "modeOfPayment": "online"
+
+  },
+    {
+        "transactionId": 2,
+        "payer": "Jim",
+        "payee": "john",
+        "category": "Shopping",
+        "subCategory": "subcategory",
+        "amount": 1700,
+        "date": "14-1-2012",
+        "modeOfPayment": "cash"
+
+   },
+    {
+        "transactionId": 3,
+        "payer": "ricky",
+        "payee": "robb",
+        "category": "Entertainment",
+        "subCategory": "subcategory",
+        "amount": 2050,
+        "date": "19-2-2015",
+        "modeOfPayment": "cash"
+
+  }
+]

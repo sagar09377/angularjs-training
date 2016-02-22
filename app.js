@@ -1,64 +1,68 @@
-var app = angular.module('myApp', ['ui.router', 'ngAnimate']);
+// Code goes here
+
+var expenseMngrApp = angular.module('expenseManagerApp' , ['ngRoute']);
 
 
-app.config(function($stateProvider, $urlRouterProvider) {
+// Routing 
+expenseMngrApp.config(
+  function($routeProvider) {
+    $routeProvider.
+      when('/dashboard', {
+        templateUrl: 'partials/dashboard.html',
+        controller: 'DashboardCtrl'
+      }).
+      when('/expense', {
+        templateUrl: 'partials/expense.html',    
+        controller: 'ExpenseCtrl'
+      }).
+      when('/income', {
+        templateUrl: 'partials/income.html',
+        controller: 'IncomeCtrl'
+      }).
+      otherwise({
+        redirectTo: '/dashboard'
+      });
+  });
 
 
-  //  $urlRouterProvider.otherwise('/home');
-
-    $stateProvider
-
-    // HOME STATES AND NESTED VIEWS ========================================
-       
-        .state('home', {
-            url: '/home',
-            templateUrl: 'pages/home.html',
-            controller: function($scope) {
-
-                $scope.showIncome = false;
-                $scope.showExpense = false;
-                $scope.totalInome = 0;
-
-                $scope.incomeArray = [{
-                    business: 1000,
-                    company: 2500,
-                    market: 4000,
-                    sharemarket: 6000
-                }];
-                $scope.expenseArray = [{
-                    shopping: 500,
-                    fees: 200,
-                    mobilebill: 300,
-                    petrolbill: 500
-
-                }];
-
-                $scope.showExpense1 = function() {
-                    $scope.showIncome = false;
-                    $scope.showExpense = true;
-                };
-
-                $scope.showIncome1 = function() {
-                    $scope.showIncome = true;
-                    $scope.showExpense = false;
-                };
-
-                $scope.sumOfExpense = 0;
-                for (var a in $scope.expenseArray[0]) {
-                    $scope.sumOfExpense += $scope.expenseArray[0][a];
-                    console.log($scope.expenseArray[0][a]);
-                }
-
-
-                $scope.sumOfIncome = 0;
-                for (var a in $scope.incomeArray[0]) {
-                    $scope.sumOfIncome += $scope.incomeArray[0][a];
-                    console.log($scope.incomeArray[0][a]);
-                }
-            }
-        })
-
-});
-app.controller('customersCtrl', function($scope) {
+//expenseMngrApp.controller('mycontroller', function ($scope) {
+  //$scope.showIncomeTable = false;
+ // $scope.showExpenseTable = false;
+  
+  // array of expense
     
-});
+ /* $scope.sumOfExpense = 0;
+    for(var a in $scope.expenseArray[0]) {
+      $scope.sumOfExpense += $scope.expenseArray[0][a];
+     console.log($scope.expenseArray[0][a]);
+    }
+    
+    console.log("sum of expense : "+ $scope.sumOfExpense);
+
+*/
+  // array of income 
+/**/
+  
+/*  $scope.sumOfIncome = 0;
+    for(var a in $scope.incomeArray[0]) {
+      $scope.sumOfIncome += $scope.incomeArray[0][a];
+     console.log($scope.incomeArray[0][a]);
+    }
+    */
+  
+/*
+  $scope.showIncome = function () {
+    $scope.showIncomeTable = true;
+    $scope.showExpenseTable = false
+  }
+  
+   $scope.showExpense = function () {
+       console.log($scope.expenseArray.length);
+    $scope.showIncomeTable = false;
+    $scope.showExpenseTable = true
+  }
+*/
+
+  
+
+//});
