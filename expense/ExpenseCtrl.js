@@ -5,7 +5,7 @@
 
 (function () {
     'use strict';
-    expenseMngrApp.controller('ExpenseCtrl',
+    expenseMngrApp.controller('ExpenseCtrl', ['$scope', 'expenseService',
     function ($scope, expenseService) {
 
             /**
@@ -34,25 +34,18 @@
             $scope.newListing = {};
             $scope.addExpense = function (newListing) {
                 $scope.expenseArray.push(newListing);
-                //$scope.newListing = {};
-                //$scope.expVisible = false;
+                $scope.newListing = {};
+                $scope.expVisible = false;
             }
-            // $scope.expVisible = false;
-            // $scope.AddNewExpenseBtn = function () {
-            //     $scope.expVisible = true;
-            // }
+            $scope.expVisible = false;
+            $scope.AddNewExpenseBtn = function () {
+                $scope.expVisible = true;
+            }
 
             // Removing expense
             $scope.removeExpense = function (index) {
-                if (confirm("Do u want to delete?") == true) 
-                {
-                    $scope.incomeArray.splice(index, 1);
-                } 
-                else 
-                {
-                    $scope.incomeArray.splice(index,0);
-                }
+                $scope.expenseArray.splice(index, 1);
             }
 
-    });
+    }]);
 })();

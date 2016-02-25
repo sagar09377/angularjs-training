@@ -1,7 +1,7 @@
 /**
  *  Dashboard Controller
  */
-expenseMngrApp.controller("DashboardCtrl",function ($scope, incomeService, expenseService) {
+expenseMngrApp.controller("DashboardCtrl", ["$scope", "incomeService", "expenseService", function ($scope, incomeService, expenseService) {
     // Income Total
     $scope.incomeData;
     var promise = incomeService.getIncomeDetails();
@@ -29,4 +29,4 @@ expenseMngrApp.controller("DashboardCtrl",function ($scope, incomeService, expen
         }
     });
 
-});
+}]);

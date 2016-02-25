@@ -3,20 +3,22 @@
    text-align: center;   
 }
 
-#addForm , $addExpenseForm {color: #999;}
-#addForm .ng-pristine , #addExpenseForm .ng-pristine {
+#addForm , #addExpenseForm , #editIncomeForm , #editExpenseForm{color: #999;}
+#addForm .ng-pristine , #addExpenseForm .ng-pristine , #editIncomeForm .ng-pristine , #editExpenseForm .ng-pristine {
     background: none!important;
 }
-#addForm .ng-dirty , #addExpenseForm .ng-dirty{
+#addForm .ng-dirty , #addExpenseForm .ng-dirty , #editIncomeForm .ng-dirty,#editExpenseForm .ng-dirty{
     background:#FAC8C8;
 }
-#addForm .ng-valid , #addExpenseForm .ng-valid{
+#addForm .ng-valid , #addExpenseForm .ng-valid , #editIncomeForm .ng-valid , #editExpenseForm .ng-valid{
     background: #E8FAC8
 }
-#addForm .ng-invalid ,#addExpenseForm .ng-invalid{
+#addForm .ng-invalid ,#addExpenseForm .ng-invalid , #editIncomeForm .ng-invalid , #editExpenseForm .ng-invalid{
     background: #FAC8C8
 }
 button:disabled {
     background: #ccc;
     color:#aaa;
 }
+
+.glyphicon.glyphicon-plus{margin-right: 5px !important;}

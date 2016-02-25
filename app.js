@@ -4,28 +4,32 @@ var expenseMngrApp = angular.module('expenseManagerApp' , ['ngRoute']);
 
 
 // Routing 
-expenseMngrApp.config(
+expenseMngrApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/dashboard', {
-        templateUrl: 'partials/dashboard.html',
+        templateUrl: 'dashboard/dashboard.html',
         controller: 'DashboardCtrl'
       }).
       when('/expense', {
-        templateUrl: 'partials/expense.html',    
+        templateUrl: 'expense/expense.html',    
         controller: 'ExpenseCtrl'
       }).
       when('/income', {
-        templateUrl: 'partials/income.html',
+        templateUrl: 'income/income.html',
         controller: 'IncomeCtrl'
+      }).
+    when('/report', {
+        templateUrl: 'reports/reports.html',
+        controller: 'ReportCtrl'
       }).
       otherwise({
         redirectTo: '/dashboard'
       });
-  });
+  }]);
 
 
-//expenseMngrApp.controller('mycontroller', function ($scope) {
+expenseMngrApp.controller('mycontroller', function ($scope) {
   //$scope.showIncomeTable = false;
  // $scope.showExpenseTable = false;
   
@@ -65,4 +69,4 @@ expenseMngrApp.config(
 
   
 
-//});
+});

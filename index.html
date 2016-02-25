@@ -3,17 +3,19 @@
 <head>
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <script src="js/angular.min.js"></script>
-    <script src="js/angular-route.min.js"></script>
+    <script src="libs/angular.min.js"></script>
+    <script src="libs/angular-route.min.js"></script>
     <script src="app.js"></script>
-    <script src="services/expenseSrv.js"></script>
-    <script src="services/incomeSrv.js"></script>
-	 <script src="controllers/ExpenseCtrl.js"></script>
-    <script src="controllers/IncomeCtrl.js"></script>
-    <script src="controllers/DashboardCtrl.js"></script>
+    <script src="expense/expenseSrv.js"></script>
+    <script src="expense/ExpenseCtrl.js"></script>
+    <script src="income/incomeSrv.js"></script>
+    <script src="income/IncomeCtrl.js"></script>
+    <script src="dashboard/DashboardCtrl.js"></script>
+    <script src="reports/ReportCtrl.js"></script>
 </head>
 <body ng-app="expenseManagerApp">
 <div ng-include="'navbar.html'"></div>
+
     <div class="container mtop text-center">
         <!--Here All the views will load-->
         <div ng-view></div>

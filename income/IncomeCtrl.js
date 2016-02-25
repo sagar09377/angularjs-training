@@ -5,7 +5,7 @@
 
 (function () {
     'use strict';
-    expenseMngrApp.controller('IncomeCtrl',
+    expenseMngrApp.controller('IncomeCtrl', ['$scope', 'incomeService',
 
     function ($scope, incomeService) {
 
@@ -34,29 +34,23 @@
 
             // Add Income
 
-            //$scope.incomeVisible = false;
+            $scope.incomeVisible = false;
             /*function To show the add income form*/
-            // $scope.AddNewIncomeBtn = function () {
-            //     $scope.incomeVisible = true;
-            // }
+            $scope.AddNewIncomeBtn = function () {
+                $scope.incomeVisible = true;
+            }
 
             $scope.newListing = {};
             $scope.addIncome = function (newListing) {
                 $scope.incomeArray.push(newListing);
-               // $scope.newListing = {};
-                //$scope.incomeVisible = false;
+                $scope.newListing = {};
+                $scope.incomeVisible = false;
             }
 
             // Removing Income
             $scope.removeIncome = function (index) {
-             
-    if (confirm("delete the data!") == true) {
-        $scope.incomeArray.splice(index, 1);
-    } else {
-        $scope.incomeArray.splice(index, 0);
-    }
-               
+                $scope.incomeArray.splice(index, 1);
             }
 
-    });
+    }]);
 })();
